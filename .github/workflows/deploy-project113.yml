@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "chapter1/project113/src/main/resources/static/**"
+      - "chapter1/part03_spring_project/project113/src/main/resources/static/**"
       - ".github/workflows/deploy-project113.yml"
 
   workflow_dispatch:
