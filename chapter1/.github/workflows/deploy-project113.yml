@@ -1,0 +1,44 @@
+name: Deploy Project113
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "project113/src/main/resources/static/**"
+      - ".github/workflows/deploy-project113.yml"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Project113
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: project113/src/main/resources/static
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
