@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV cá nhân - Portfolio">
+    <title>CV cá nhân | Your Name</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar no-print">
+    <a class="brand" href="#home">CV<span>.</span></a>
+    <nav>
+        <a href="#about">Giới thiệu</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+    </nav>
+    <button class="print-btn" id="printCv" type="button">In / Lưu PDF</button>
+</header>
+
+<main id="home" class="page-shell">
+    <section class="hero card">
+        <div class="hero-copy">
+            <p class="eyebrow">CURRICULUM VITAE</p>
+            <h1>YOUR NAME</h1>
+            <h2>Java Backend Developer</h2>
+            <p class="hero-description">
+                Sinh viên Công nghệ thông tin định hướng Backend, tập trung vào Java, Spring Boot
+                và xây dựng các ứng dụng web có cấu trúc rõ ràng, dễ bảo trì.
+            </p>
+            <div class="hero-actions no-print">
+                <a class="primary-btn" href="#projects">Xem dự án</a>
+                <a class="secondary-btn" href="#contact">Liên hệ</a>
+            </div>
+        </div>
+        <div class="avatar-wrap">
+            <img src="images/avatar-placeholder.svg" alt="Ảnh đại diện">
+        </div>
+    </section>
+
+    <div class="content-grid">
+        <aside class="sidebar">
+            <section id="contact" class="card section-card">
+                <h3>Liên hệ</h3>
+                <dl class="contact-list">
+                    <div><dt>Email</dt><dd><a href="mailto:yourname@example.com">yourname@example.com</a></dd></div>
+                    <div><dt>Điện thoại</dt><dd>0123 456 789</dd></div>
+                    <div><dt>Địa điểm</dt><dd>TP. Hồ Chí Minh, Việt Nam</dd></div>
+                    <div><dt>GitHub</dt><dd><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a></dd></div>
+                    <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/yourname</a></dd></div>
+                </dl>
+            </section>
+
+            <section id="skills" class="card section-card">
+                <h3>Kỹ năng</h3>
+                <div class="tags">
+                    <span>Java</span><span>Spring Boot</span><span>REST API</span>
+                    <span>PostgreSQL</span><span>Git</span><span>Docker</span>
+                    <span>HTML/CSS</span><span>JavaScript</span>
+                </div>
+            </section>
+
+            <section class="card section-card">
+                <h3>Ngôn ngữ</h3>
+                <div class="meter-row"><span>Tiếng Việt</span><strong>Bản ngữ</strong></div>
+                <div class="meter-row"><span>Tiếng Anh</span><strong>Đang cải thiện</strong></div>
+            </section>
+        </aside>
+
+        <div class="main-column">
+            <section id="about" class="card section-card">
+                <p class="section-kicker">ABOUT ME</p>
+                <h3>Giới thiệu</h3>
+                <p>
+                    Tôi quan tâm đến phát triển Backend và kiến trúc ứng dụng web. Mục tiêu hiện tại
+                    là củng cố Java/Spring Boot, cơ sở dữ liệu, REST API, kiểm thử và quy trình triển khai.
+                    Hãy thay đoạn này bằng phần giới thiệu thực tế của bạn.
+                </p>
+            </section>
+
+            <section class="card section-card">
+                <p class="section-kicker">EDUCATION</p>
+                <h3>Học vấn</h3>
+                <article class="timeline-item">
+                    <div class="timeline-head">
+                        <div>
+                            <h4>Tên trường đại học</h4>
+                            <p>Ngành Công nghệ thông tin</p>
+                        </div>
+                        <span>2024 — 2028</span>
+                    </div>
+                    <p>Mô tả ngắn về chuyên ngành, GPA hoặc các môn học nổi bật nếu cần.</p>
+                </article>
+            </section>
+
+            <section id="projects" class="card section-card">
+                <p class="section-kicker">PROJECTS</p>
+                <h3>Dự án</h3>
+
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <h4>Project 01 — Web Application</h4>
+                            <p class="muted">Backend Developer</p>
+                        </div>
+                        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub ↗</a>
+                    </div>
+                    <p>Xây dựng ứng dụng web với Spring Boot, REST API và PostgreSQL.</p>
+                    <ul>
+                        <li>Thiết kế API và xử lý nghiệp vụ phía server.</li>
+                        <li>Làm việc với Spring Data JPA và cơ sở dữ liệu quan hệ.</li>
+                        <li>Quản lý source code bằng Git.</li>
+                    </ul>
+                    <div class="tags compact"><span>Java</span><span>Spring Boot</span><span>PostgreSQL</span></div>
+                </article>
+
+                <article class="project">
+                    <div class="project-head">
+                        <div>
+                            <h4>Project 02 — Personal CV Website</h4>
+                            <p class="muted">Personal Project</p>
+                        </div>
+                        <a href="#home">Live demo</a>
+                    </div>
+                    <p>Website CV cá nhân responsive, có thể chạy bằng Spring Boot và deploy lên GitHub Pages.</p>
+                    <div class="tags compact"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                </article>
+            </section>
+
+            <section class="card section-card">
+                <p class="section-kicker">EXPERIENCE</p>
+                <h3>Kinh nghiệm / Hoạt động</h3>
+                <article class="timeline-item">
+                    <div class="timeline-head">
+                        <div>
+                            <h4>Hoạt động hoặc kinh nghiệm</h4>
+                            <p>Tên tổ chức / nhóm</p>
+                        </div>
+                        <span>2026</span>
+                    </div>
+                    <p>Nếu chưa có kinh nghiệm làm việc, có thể thay bằng hoạt động học thuật hoặc dự án nhóm.</p>
+                </article>
+            </section>
+        </div>
+    </div>
+</main>
+
+<footer class="footer no-print">
+    <span>© <span id="currentYear"></span> YOUR NAME</span>
+    <a href="#home">Lên đầu trang ↑</a>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

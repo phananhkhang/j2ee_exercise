@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Random CAPTCHA</title>
+</head>
+
+<body>
+
+<h1>Random CAPTCHA</h1>
+
+<img
+        th:src="@{'/images/captcha/' + ${imageName}}"
+        alt="Captcha"
+>
+
+<br><br>
+
+<a href="/captcha">
+    Đổi CAPTCHA
+</a>
+
+</body>
+</html>
