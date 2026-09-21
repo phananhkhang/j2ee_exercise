@@ -1,11 +1,11 @@
 name: Deploy Project113
 
-"on":
+on:
   push:
     branches:
       - main
     paths:
-      - "project113/src/main/resources/static/**"
+      - "chapter1/project113/src/main/resources/static/**"
       - ".github/workflows/deploy-project113.yml"
 
   workflow_dispatch:
@@ -29,15 +29,15 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload Project113
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: project113/src/main/resources/static
+          path: chapter1/project113/src/main/resources/static
 
       - name: Deploy
         id: deployment
