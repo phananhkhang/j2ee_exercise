@@ -37,7 +37,7 @@ jobs:
       - name: Upload Project113
         uses: actions/upload-pages-artifact@v4
         with:
-          path: chapter1/project113/src/main/resources/static
+          path: chapter1/part03_spring_project/project113/src/main/resources/static
 
       - name: Deploy
         id: deployment
