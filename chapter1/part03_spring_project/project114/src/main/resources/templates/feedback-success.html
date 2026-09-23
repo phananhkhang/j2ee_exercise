@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cảm ơn bạn đã gửi phản hồi!</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a th:href="@{/feedback}" class="nav-brand">
+                <span>🌟 ServicePulse</span>
+                <span class="brand-badge">Khảo sát CSAT</span>
+            </a>
+            <nav class="nav-links">
+                <a th:href="@{/feedback}" class="nav-link">Gửi phản hồi</a>
+                <a th:href="@{/feedbacks}" class="nav-link">Bảng quản trị phản hồi</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-wrapper">
+        <div class="feedback-card success-card">
+            <div class="success-icon">✓</div>
+            <h2>Cảm ơn bạn đã gửi phản hồi!</h2>
+            <p>Ý kiến quý báu của bạn đã được ghi nhận vào hệ thống thành công.</p>
+
+            <div class="summary-box">
+                <div class="summary-row">
+                    <span class="summary-label">Mã phản hồi:</span>
+                    <span class="summary-value" th:text="'#' + ${feedback.id}">#1</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Khách hàng:</span>
+                    <span class="summary-value" th:text="${feedback.fullName}">Nguyễn Văn A</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Dịch vụ:</span>
+                    <span class="summary-value" th:text="${feedback.serviceType}">Dịch vụ kỹ thuật</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Mức độ hài lòng:</span>
+                    <span class="summary-value" th:text="${feedback.overallRating} + ' / 5 ★'">5 / 5 ★</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Thời gian gửi:</span>
+                    <span class="summary-value" th:text="${feedback.submittedAt}">23/09/2026 16:30</span>
+                </div>
+                <div class="summary-row" th:if="${feedback.comments != null && !feedback.comments.trim().isEmpty()}">
+                    <span class="summary-label">Ý kiến đóng góp:</span>
+                    <span class="summary-value" th:text="${feedback.comments}">Tốt</span>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <a th:href="@{/feedback}" class="btn-secondary">Gửi phản hồi khác</a>
+                <a th:href="@{/feedbacks}" class="btn-primary">Xem tất cả phản hồi</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 ServicePulse Feedback System - SGU J2EE Project 1.14</p>
+    </footer>
+
+</body>
+</html>

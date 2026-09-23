@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Quản trị & Tổng hợp Phản hồi Khách hàng</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a th:href="@{/feedback}" class="nav-brand">
+                <span>🌟 ServicePulse</span>
+                <span class="brand-badge">Quản trị CSAT</span>
+            </a>
+            <nav class="nav-links">
+                <a th:href="@{/feedback}" class="nav-link">Gửi phản hồi</a>
+                <a th:href="@{/feedbacks}" class="nav-link active">Bảng quản trị phản hồi</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-wrapper">
+        
+        <!-- KPI Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title">Tổng số phản hồi</div>
+                <div class="stat-value" th:text="${totalCount}">0</div>
+                <div class="stat-sub">Đánh giá từ khách hàng</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Điểm hài lòng trung bình</div>
+                <div class="stat-value" style="color: #f59e0b;">
+                    <span th:text="${averageRating}">5.0</span> ★
+                </div>
+                <div class="stat-sub">Thang điểm 5 sao CSAT</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Tỷ lệ khuyên dùng</div>
+                <div class="stat-value" style="color: #16a34a;">
+                    <span th:text="${recommendPercentage}">100</span>%
+                </div>
+                <div class="stat-sub">Sẵn sàng giới thiệu dịch vụ</div>
+            </div>
+        </div>
+
+        <!-- Table Card -->
+        <div class="table-card">
+            <div class="table-header-bar">
+                <h2 style="font-size: 1.25rem; font-weight: 700;">Danh sách Phản hồi Gần đây</h2>
+                <a th:href="@{/feedback}" class="btn-primary" style="font-size: 0.85rem; padding: 6px 14px;">+ Thêm phản hồi mới</a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="feedback-table">
+                    <thead>
+                        <tr>
+                            <th>Mã</th>
+                            <th>Khách hàng</th>
+                            <th>Dịch vụ</th>
+                            <th>Đánh giá chung</th>
+                            <th>Thái độ / Tốc độ</th>
+                            <th>Khuyên dùng</th>
+                            <th>Thời gian</th>
+                            <th>Ý kiến đóng góp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="fb : ${feedbacks}">
+                            <td style="font-weight: 600; color: var(--muted);" th:text="'#' + ${fb.id}">#1</td>
+                            <td>
+                                <strong th:text="${fb.fullName}">Nguyễn Văn A</strong><br>
+                                <small style="color: var(--muted);" th:text="${fb.email}">email@example.com</small>
+                            </td>
+                            <td>
+                                <span class="badge badge-service" th:text="${fb.serviceType}">Dịch vụ</span>
+                            </td>
+                            <td>
+                                <span class="badge badge-star" th:text="${fb.overallRating} + ' ★'">5 ★</span>
+                            </td>
+                            <td>
+                                <small th:text="'Thái độ: ' + ${fb.staffAttitude} + '★'"></small><br>
+                                <small th:text="'Tốc độ: ' + ${fb.serviceSpeed} + '★'"></small>
+                            </td>
+                            <td>
+                                <span th:if="${fb.recommend}" class="badge badge-recommend-yes">Có 👍</span>
+                                <span th:unless="${fb.recommend}" class="badge badge-recommend-no">Không 👎</span>
+                            </td>
+                            <td style="font-size: 0.85rem; color: var(--muted);" th:text="${fb.submittedAt}">23/09/2026</td>
+                            <td style="max-width: 250px; font-size: 0.9rem;" th:text="${fb.comments}">Rất hài lòng</td>
+                        </tr>
+                        <tr th:if="${#lists.isEmpty(feedbacks)}">
+                            <td colspan="8" style="text-align: center; color: var(--muted); padding: 30px;">
+                                Chưa có phản hồi nào được ghi nhận.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 ServicePulse Feedback System - SGU J2EE Project 1.14</p>
+    </footer>
+
+</body>
+</html>

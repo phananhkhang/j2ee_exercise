@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khảo sát & Phản hồi Dịch vụ Khách hàng</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a th:href="@{/feedback}" class="nav-brand">
+                <span>🌟 ServicePulse</span>
+                <span class="brand-badge">Khảo sát CSAT</span>
+            </a>
+            <nav class="nav-links">
+                <a th:href="@{/feedback}" class="nav-link active">Gửi phản hồi</a>
+                <a th:href="@{/feedbacks}" class="nav-link">Bảng quản trị phản hồi</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-wrapper">
+        <div class="feedback-card">
+            <div class="card-header">
+                <h1>Ý kiến & Đánh giá Dịch vụ Khách hàng</h1>
+                <p>Cảm ơn bạn đã tin tưởng sử dụng dịch vụ. Ý kiến đóng góp chân thành của bạn giúp chúng tôi cải thiện chất lượng phục vụ ngày một tốt hơn.</p>
+            </div>
+
+            <div class="card-body">
+                <!-- Error Alert -->
+                <div th:if="${errorMessage}" class="alert-error" role="alert">
+                    <span>⚠️</span>
+                    <span th:text="${errorMessage}">Vui lòng kiểm tra lại thông tin.</span>
+                </div>
+
+                <form th:action="@{/feedback}" th:object="${feedback}" method="POST">
+                    
+                    <!-- Customer Information -->
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Họ và tên <span class="required">*</span></label>
+                            <input type="text" id="fullName" th:field="*{fullName}" class="form-control" placeholder="Ví dụ: Nguyễn Văn A" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Địa chỉ Email <span class="required">*</span></label>
+                            <input type="email" id="email" th:field="*{email}" class="form-control" placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone" th:field="*{phone}" class="form-control" placeholder="Ví dụ: 0912345678">
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">Loại dịch vụ đã sử dụng <span class="required">*</span></label>
+                            <select id="serviceType" th:field="*{serviceType}" class="form-control" required>
+                                <option value="">-- Chọn loại dịch vụ --</option>
+                                <option th:each="st : ${serviceTypes}" th:value="${st}" th:text="${st}">Dịch vụ</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Overall Star Rating -->
+                    <div class="rating-section">
+                        <div class="rating-header">
+                            <span class="rating-title">Mức độ hài lòng chung về dịch vụ <span class="required">*</span></span>
+                            <span id="ratingDisplay" class="rating-label-display">5★ - Rất hài lòng 🤩</span>
+                        </div>
+                        <input type="hidden" th:field="*{overallRating}" id="overallRatingInput" value="5">
+                        <div class="stars-container" aria-label="Đánh giá từ 1 đến 5 sao">
+                            <span class="star active" data-val="1" title="Rất không hài lòng">★</span>
+                            <span class="star active" data-val="2" title="Chưa hài lòng">★</span>
+                            <span class="star active" data-val="3" title="Bình thường">★</span>
+                            <span class="star active" data-val="4" title="Hài lòng">★</span>
+                            <span class="star active" data-val="5" title="Rất hài lòng">★</span>
+                        </div>
+
+                        <!-- Specific Criteria Ratings -->
+                        <div class="criteria-grid">
+                            <div class="criteria-box">
+                                <label>Thái độ phục vụ của nhân viên:</label>
+                                <div class="radio-group">
+                                    <div class="radio-pill" th:each="score : ${#numbers.sequence(1, 5)}">
+                                        <input type="radio" th:id="'attitude' + ${score}" th:field="*{staffAttitude}" th:value="${score}">
+                                        <label th:for="'attitude' + ${score}" th:text="${score} + '★'"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="criteria-box">
+                                <label>Tốc độ xử lý & phục vụ:</label>
+                                <div class="radio-group">
+                                    <div class="radio-pill" th:each="score : ${#numbers.sequence(1, 5)}">
+                                        <input type="radio" th:id="'speed' + ${score}" th:field="*{serviceSpeed}" th:value="${score}">
+                                        <label th:for="'speed' + ${score}" th:text="${score} + '★'"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Comments -->
+                    <div class="form-group form-group-full">
+                        <label for="comments">Ý kiến đóng góp & Nhận xét chi tiết</label>
+                        <textarea id="comments" th:field="*{comments}" class="form-control" rows="4" placeholder="Hãy chia sẻ trải nghiệm cụ thể hoặc những điều chúng tôi có thể làm tốt hơn..."></textarea>
+                    </div>
+
+                    <!-- Recommend question -->
+                    <div class="recommend-box">
+                        <span class="text">Bạn có sẵn lòng giới thiệu dịch vụ của chúng tôi cho bạn bè, đồng nghiệp không?</span>
+                        <div class="radio-group" style="width: 180px;">
+                            <div class="radio-pill">
+                                <input type="radio" id="recYes" th:field="*{recommend}" th:value="true">
+                                <label for="recYes">Có, sẵn lòng 👍</label>
+                            </div>
+                            <div class="radio-pill">
+                                <input type="radio" id="recNo" th:field="*{recommend}" th:value="false">
+                                <label for="recNo">Chưa chắc 🤔</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit">
+                        Gửi phản hồi của bạn 🚀
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 ServicePulse Feedback System - SGU J2EE Project 1.14</p>
+    </footer>
+
+    <script th:src="@{/js/feedback.js}"></script>
+</body>
+</html>
