@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Home</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 th:text="${appName}">
+            Book Management
+        </h1>
+
+        <p>
+            Dự án Spring Boot cơ bản
+        </p>
+
+        <a href="/books" class="btn">
+
+            Quản lý sách
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

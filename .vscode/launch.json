@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Application",
+            "request": "launch",
+            "mainClass": "net.javaguides.spring.scope.Application",
+            "projectName": "project12"
+        },
+        {
+            "type": "java",
+            "name": "Project13Application",
+            "request": "launch",
+            "mainClass": "com.sgu.j2ee.chapter1.project13.Project13Application",
+            "projectName": "project13"
+        },
+        {
+            "type": "java",
+            "name": "Run Java (UTF-8)",
+            "request": "launch",
+            "mainClass": "Main",
+            "vmArgs": "-Dfile.encoding=UTF-8"
+        }
+    ]
+}
