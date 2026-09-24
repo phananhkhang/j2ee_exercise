@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tra cứu điểm thi</title>
+    <!-- Nhúng thư viện reCAPTCHA của Google -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        .result-table { margin-top: 20px; border-collapse: collapse; width: 50%; }
+        .result-table th, .result-table td { border: 1px solid black; padding: 8px; text-align: left; }
+        .error { color: red; font-weight: bold; }
+    </style>
 </head>
 <body>
+
+<h2>Hệ thống Tra cứu Điểm thi</h2>
+
+<!-- Form tra cứu -->
+<form action="/search" method="post">
+    <label for="mssv">Nhập MSSV:</label>
+    <input type="text" id="mssv" name="mssv" required>
+    <br><br>
+
+    <!-- Widget CAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="6LeK58wtAAAAAOkr9U2CKmQYA0WEJCtI_2HgvdHo"></div>
+    <br>
+
+    <button type="submit">Tra cứu</button>
+</form>
+
+<!-- Hiển thị thông báo lỗi nếu có -->
+<p th:if="${error != null}" class="error" th:text="${error}"></p>
+
+<!-- Bảng hiển thị kết quả nếu tìm thấy điểm -->
+<table th:if="${score != null}" class="result-table">
+    <tr>
+        <th>Mã số học sinh</th>
+        <td th:text="${score.mssv}"></td>
+    </tr>
+
+    <tr>
+        <th>Họ và Tên</th>
+        <td th:text="${score.fullName}"></td>
+    </tr>
+    <tr>
+        <th>Điểm Toán</th>
+        <td th:text="${score.mathScore}"></td>
+    </tr>
+    <tr>
+        <th>Điểm Văn</th>
+        <td th:text="${score.literatureScore}"></td>
+    </tr>
+    <tr>
+        <th>Điểm Anh Văn</th>
+        <td th:text="${score.englishScore}"></td>
+    </tr>
+</table>
 
 </body>
 </html>
