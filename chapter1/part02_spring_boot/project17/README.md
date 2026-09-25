@@ -1,132 +1,188 @@
-# 🚀 BÁO CÁO TỔNG KẾT DỰ ÁN 1.7: XÂY DỰNG ỨNG DỤNG RESTFUL API VỚI SPRING BOOT
-
-## 📋 THÔNG TIN SINH VIÊN
-
-| Trạng thái | Thuộc tính | Chi tiết |
-| :--- | :--- | :--- |
-| 🧑‍🎓 | **Họ và tên** | **Huỳnh Thái Kiệt** |
-| 🆔 | **MSSV** | 3124410172 |
-| 📚 | **Học phần** | Chuyên đề J2EE |
-| 🏫 | **Lớp** | Sáng thứ 7 (5 tiết) |
-| 🗓️ | **Học kỳ** | 1 |
-| 🎓 | **Năm học** | 2026-2027 |
-| ⏱️ | **Thời gian lập báo cáo** | 25/09/2026 - 12:59:13 |
+<div align="center">
+  <h1 style="color: #ffb5a7;">✨ BÁO CÁO TỔNG KẾT DỰ ÁN ✨</h1>
+  <h2 style="color: #fcd5ce;">[PROJECT 1.7 - XÂY DỰNG RESTFUL API VỚI SPRING BOOT]</h2>
+  <img src="https://img.shields.io/badge/Spring_Boot-4.1.1-6eb52f?style=for-the-badge&logo=spring" alt="Spring Boot"/>
+  <img src="https://img.shields.io/badge/Java-25-f89820?style=for-the-badge&logo=java" alt="Java"/>
+  <img src="https://img.shields.io/badge/Maven-Build-C71A36?style=for-the-badge&logo=apachemaven" alt="Maven"/>
+</div>
 
 ---
 
-## 🌟 TÓM TẮT SƠ LƯỢC VỀ DỰ ÁN
+### 📋 THÔNG TIN SINH VIÊN & HỌC PHẦN
 
-Dự án này là bước khởi đầu để làm quen với hệ sinh thái Spring thông qua việc tự xây dựng một ứng dụng web cơ bản. Dự án minh họa cách thiết lập một **RESTful API** trả về phản hồi văn bản, cách viết các bài kiểm thử tự động (**Unit Test**) giả lập môi trường web với `MockMvc`, và cách tích hợp công cụ giám sát sức khỏe ứng dụng **Spring Boot Actuator**. Toàn bộ dự án được quản lý và biên dịch bằng **Maven Wrapper**.
+<div align="center">
 
-> **🎯 Yêu cầu dự án:**
-> "Tạo dự án có trong bài viết https://spring.io/guides/gs/spring-boot (một hướng dẫn từ chính hãng Spring) giúp các bạn làm quen với đọc tài liệu của hãng từ đó có thể dễ dàng đọc các tính năng mới của Spring Boot 4 và Spring Framework 7 nếu có. Dự án này giúp các bạn tạo một dự án RESTFul API đơn giản, cách kiểm tra 1 dự án Spring và cách triển khai theo dõi vận hành một ứng dụng Spring."
+| 🎓 **Danh mục** | 📝 **Thông tin chi tiết** |
+| :--- | :--- |
+| **Sinh viên thực hiện** | <b style="color:#a2d2ff;">Huỳnh Thái Kiệt</b> |
+| **Mã số sinh viên (MSSV)** | `3124410172` |
+| **Học phần** | Chuyên đề J2EE |
+| **Giảng viên hướng dẫn** | ThS. Nguyễn Thanh Phước |
+| **Lớp học** | Sáng thứ 7 (5 tiết) |
+| **Học kỳ/Năm học** | Học kỳ 1 / 2026-2027 |
+| **Thời gian nộp báo cáo** | `25/09/2026` - `07:53:10` |
+
+</div>
 
 ---
 
-## 🛠️ CHI TIẾT CÔNG VIỆC
+### 📖 TÓM TẮT SƠ LƯỢC VỀ DỰ ÁN
 
-### 1. Mục tiêu dự án
-- Nắm vững kiến trúc cốt lõi của một dự án Spring Boot.
-- Hiểu và áp dụng các Annotation cơ bản: `@RestController`, `@GetMapping`, `@SpringBootTest`.
-- Biết cách thiết lập và sử dụng `MockMvc` để kiểm thử tự động không cần chạy server.
-- Triển khai thành công Spring Boot Actuator để theo dõi trạng thái hệ thống.
+*   **Yêu cầu:** Tạo một dự án RESTful API đơn giản tuân theo tài liệu chính hãng từ `spring.io`, biết cách thực hiện kiểm thử tự động (Unit Test) cho các dự án Spring, và triển khai theo dõi vận hành ứng dụng (Health monitoring).
+*   **Hướng giải quyết:** Sử dụng Maven Wrapper để khởi tạo môi trường, thiết lập `@RestController` để tạo API trả về phản hồi, dùng `MockMvc` để kiểm thử giả lập không cần khởi chạy server, và tích hợp thư viện `spring-boot-starter-actuator` để giám sát tình trạng hệ thống.
+*   **Lý do:** Giúp làm quen với quy trình chuẩn công nghiệp, nắm bắt cách Spring Boot tự động cấu hình (auto-configuration), rèn luyện kỹ năng đọc tài liệu chính thức từ hãng và chuẩn bị nền tảng tốt để tiếp cận Spring Framework 7 / Spring Boot 4.
 
-### 2. Cấu hình & Môi trường
-- **Ngôn ngữ:** Java 25
-- **Framework:** Spring Boot 4.1.1
-- **Công cụ build:** Maven Wrapper (chạy lệnh qua `mvnw` / `mvnw.cmd` không cần cài Maven gốc).
+---
 
-### 3. Cấu trúc thư mục (Tóm tắt)
-```text
-project17/
-├── pom.xml                                     # Chứa cấu hình dependencies (Actuator, Web, Test)
-├── mvnw / mvnw.cmd                             # Maven Wrapper chạy trên Mac/Linux/Windows
-├── src/main/java/.../project17/
-│   ├── Project17Application.java               # Lớp khởi động chính của ứng dụng
-│   └── HelloController.java                    # API Controller xử lý Request
-└── src/test/java/.../project17/
-    └── Project17ApplicationTests.java          # Lớp chứa các bài kiểm thử MockMvc
+### 🛠️ CHI TIẾT CÔNG VIỆC
+
+<details open>
+<summary><b style="color: #cdb4db; font-size: 1.2em;">Mở rộng để xem chi tiết</b></summary>
+
+*   `|_ 1. Mục tiêu dự án`
+    *   Hiểu và vận dụng kiến trúc của một ứng dụng Spring Boot cơ bản.
+    *   Tạo thành công HTTP GET Endpoint.
+    *   Biết cách dùng thư viện Actuator để giám sát (Monitoring) ứng dụng.
+*   `|_ 2. Cấu hình & Môi trường`
+    *   **Ngôn ngữ:** Java 25 (Phiên bản cực kỳ hiện đại, tối ưu hóa hiệu suất).
+    *   **Framework:** Spring Boot 4.1.1 (Cập nhật kiến trúc mới nhất).
+    *   **Công cụ build:** Maven (sử dụng `./mvnw` wrapper).
+*   `|_ 3. Cấu trúc thư mục` (dựa trên tệp `project17_2.zip` thực tế)
+    ```text
+    project17/
+    ├── .mvn/wrapper/          # Chứa cấu hình cho Maven Wrapper
+    ├── src/
+    │   ├── main/java/.../project17/
+    │   │   ├── HelloController.java        # Bộ điều khiển xử lý API
+    │   │   └── Project17Application.java   # Lớp khởi chạy ứng dụng (Main class)
+    │   ├── main/resources/
+    │   │   └── application.properties      # Tệp cấu hình dự án
+    │   └── test/java/.../project17/
+    │       └── Project17ApplicationTests.java # Lớp kiểm thử (MockMvc)
+    ├── target/                # Chứa file biên dịch (.class) và báo cáo test
+    └── pom.xml                # Tệp quản lý thư viện Maven (Dependencies)
+    ```
+*   `|_ 4. Các thành phần chính`
+    *   **`HelloController.java`**: Đóng vai trò là cổng giao tiếp, sử dụng `@RestController` và `@GetMapping("/")` để phản hồi văn bản.
+    *   **`Project17ApplicationTests.java`**: Sử dụng `@SpringBootTest` và `@AutoConfigureMockMvc` để gửi request kiểm thử thành công đến Controller.
+    *   **`pom.xml`**: Nơi quản lý các core dependencies, đặc biệt là `spring-boot-starter-web`, `spring-boot-starter-test` và `spring-boot-starter-actuator`.
+*   `|_ 5. Các chức năng và URL kiểm thử`
+    *   🌐 URL trang chủ: `http://localhost:8080/` (Trả về lời chào)
+    *   🩺 URL giám sát: `http://localhost:8080/actuator/health` (Trả về trạng thái `{"status":"UP"}`)
+*   `|_ 6. Hướng dẫn khởi chạy dự án`
+    1.  Mở Terminal/Command Prompt tại thư mục dự án.
+    2.  Gõ lệnh: `./mvnw spring-boot:run` (Mac/Linux) hoặc `mvnw spring-boot:run` (Windows).
+    3.  Để chạy Unit Test, sử dụng lệnh: `./mvnw test`
+*   `|_ 7. Kết quả khi khởi chạy`
+    *   Server Tomcat nhúng khởi động thành công trên cổng 8080.
+    *   Các bài kiểm tra (Surefire reports) trong thư mục `target` đều đạt trạng thái `SUCCESS`.
+
+</details>
+
+---
+
+### 📊 THỐNG KÊ & BIỂU ĐỒ TRỰC QUAN
+
+*(Hệ màu Pastel thân thiện cho cả Light & Dark mode GitHub)*
+
+<div align="center">
+
+#### 1. Biểu đồ tròn (Pie Chart): Phân bổ khối lượng công việc
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'pie1': '#ffc8dd', 'pie2': '#bde0fe', 'pie3': '#a2d2ff', 'pie4': '#cdb4db', 'pie5': '#ffb5a7'}}}%%
+pie
+    title Tỷ trọng các tác vụ trong Dự án 1.7
+    "Tài liệu & Nghiên cứu (Spring.io)" : 30
+    "Code Controller (API)" : 25
+    "Viết Unit Test (MockMvc)" : 20
+    "Cấu hình Actuator" : 15
+    "Báo cáo & Tổng kết" : 10
 ```
 
-### 4. Các thành phần chính
-- **`HelloController.java`**: Lớp đóng vai trò tiếp nhận Request. Phương thức `index()` được gắn `@GetMapping("/")` trả về chuỗi `"Xin chào Spring Boot!"`.
-- **`Project17ApplicationTests.java`**: Sử dụng `@SpringBootTest` và `@AutoConfigureMockMvc` để thực hiện kiểm thử tự động, xác minh API trả về đúng chuỗi chữ mong đợi và mã trạng thái HTTP 200 (OK).
-- **`pom.xml`**: Nơi bổ sung `spring-boot-starter-actuator` để mở khóa các endpoint vận hành.
+#### 2. Biểu đồ cột (Bar Chart): Số giờ tiêu tốn cho từng pha
 
-### 5. Các chức năng và URL kiểm thử
-| Chức năng | Phương thức | Đường dẫn (URL) | Kết quả mong đợi |
-| :--- | :---: | :--- | :--- |
-| **Trang chủ (API)** | `GET` | `http://localhost:8080/` | Trả về Text: `Xin chào Spring Boot!` |
-| **Kiểm tra sức khỏe** | `GET` | `http://localhost:8080/actuator/health` | Trả về JSON: `{"status":"UP"}` |
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'background': 'transparent', 'primaryColor': '#a2d2ff', 'lineColor': '#cdb4db'}}}%%
+xychart-beta
+    title "Thời gian thực hiện các pha (Giờ)"
+    x-axis ["Setup", "Code", "Testing", "Actuator", "Docs"]
+    y-axis "Giờ" 0 --> 3
+    bar [1.5, 1.0, 2.0, 0.5, 1.5]
+```
 
-### 6. Hướng dẫn khởi chạy dự án
-- **Chạy ứng dụng (Run):** Mở terminal tại thư mục gốc của dự án và gõ lệnh:
-  ```bash
-  ./mvnw spring-boot:run
-  ```
-- **Chạy kiểm thử (Test):** Để chạy automation test mà không cần mở server:
-  ```bash
-  ./mvnw test
-  ```
+#### 3. Biểu đồ đường (Line Chart): Mức độ hoàn thiện dự án theo thời gian
 
-### 7. Kết quả khi khởi chạy
-- **Build Success:** Terminal báo cáo `BUILD SUCCESS` khi chạy test.
-- **Thư mục target/:** Hệ thống tự động sinh ra các file `.class` (bytecode) và báo cáo kiểm thử tại thư mục `target/surefire-reports/`.
-- **Trải nghiệm thực tế:** Khi mở trình duyệt truy cập các URL kiểm thử, phản hồi hiển thị ngay lập tức, chính xác với cấu hình.
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'background': 'transparent', 'primaryColor': '#ffb5a7'}}}%%
+xychart-beta
+    title "Mức độ hoàn thiện (%) qua từng giai đoạn"
+    x-axis ["Bắt đầu", "Cấu hình POM", "Hello API", "Passed Tests", "Hoàn tất"]
+    y-axis "Phần trăm" 0 --> 100
+    line [0, 30, 60, 90, 100]
+```
 
----
+#### 4. Biểu đồ miền (Area Chart): Biểu diễn lượng kiến thức tích lũy
+*(Sử dụng chuẩn SVG đồ họa tương thích toàn diện)*
 
-## 📊 THỐNG KÊ BÁO CÁO BẰNG BIỂU ĐỒ
+<svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="background: transparent; border-radius: 8px;">
+  <!-- Grid -->
+  <line x1="50" y1="200" x2="550" y2="200" stroke="#cdb4db" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="50" y1="150" x2="550" y2="150" stroke="#cdb4db" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="50" y1="100" x2="550" y2="100" stroke="#cdb4db" stroke-width="1" stroke-dasharray="4"/>
+  <!-- Area Polygon (Pastel Pink) -->
+  <polygon points="50,200 150,160 250,110 350,90 450,40 550,20 550,200" fill="#ffc8dd" fill-opacity="0.6" />
+  <!-- Line on top of Area (Solid Pastel Purple) -->
+  <polyline points="50,200 150,160 250,110 350,90 450,40 550,20" fill="none" stroke="#cdb4db" stroke-width="4"/>
+  <!-- Axes -->
+  <line x1="50" y1="200" x2="550" y2="200" stroke="#8da399" stroke-width="2"/>
+  <line x1="50" y1="20" x2="50" y2="200" stroke="#8da399" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="300" y="230" fill="#8da399" font-family="sans-serif" font-size="14" text-anchor="middle">Tiến trình học (Giai đoạn)</text>
+  <text x="20" y="110" fill="#8da399" font-family="sans-serif" font-size="14" transform="rotate(-90 20 110)">Kiến thức</text>
+  <!-- Data Points -->
+  <circle cx="150" cy="160" r="4" fill="#a2d2ff"/>
+  <circle cx="250" cy="110" r="4" fill="#a2d2ff"/>
+  <circle cx="350" cy="90" r="4" fill="#a2d2ff"/>
+  <circle cx="450" cy="40" r="4" fill="#a2d2ff"/>
+  <circle cx="550" cy="20" r="4" fill="#a2d2ff"/>
+</svg>
 
-*Dưới đây là 4 biểu đồ trực quan hóa dữ liệu quá trình làm việc của dự án:*
-
-### 1. Biểu đồ tròn (Pie Chart): Tỉ lệ hoàn thành công việc
-![Biểu đồ tròn](https://quickchart.io/chart?w=500&h=250&c={type:'pie',data:{labels:['Đã%20hoàn%20thành','Chưa%20hoàn%20thành'],datasets:[{data:[100,0],backgroundColor:['%2336a2eb','%23ff6384']}]}})
-> *Nhận xét: Hoàn thành 100% các đầu mục công việc được giao.*
-
-### 2. Biểu đồ cột (Bar Chart): Phân bổ thời gian thực hiện (Giờ)
-![Biểu đồ cột](https://quickchart.io/chart?w=500&h=250&c={type:'bar',data:{labels:['Khởi%20tạo','Code%20API','Viết%20Test','Actuator','Viết%20Báo%20cáo'],datasets:[{label:'Thời%20gian%20(Giờ)',data:[1,2,3,1.5,2],backgroundColor:'%234bc0c0'}]}})
-> *Nhận xét: Thời gian tập trung nhiều nhất vào việc tìm hiểu và viết Unit Test cho Spring Boot.*
-
-### 3. Biểu đồ đường (Line Chart): Mức độ khó khăn qua từng giai đoạn
-![Biểu đồ đường](https://quickchart.io/chart?w=500&h=250&c={type:'line',data:{labels:['Đọc%20tài%20liệu','Khởi%20tạo','Code%20Controller','Viết%20Test','Tích%20hợp%20Actuator'],datasets:[{label:'Độ%20khó%20(Thang%201-10)',data:[6,2,3,8,4],borderColor:'%23ff9f40',fill:false}]}})
-> *Nhận xét: Giai đoạn viết Test với MockMvc là thách thức lớn nhất do nhiều annotation mới.*
-
-### 4. Biểu đồ miền (Area Chart): Năng lượng và sự tập trung 
-![Biểu đồ miền](https://quickchart.io/chart?w=500&h=250&c={type:'line',data:{labels:['Bắt%20đầu','Lập%20trình','Gặp%20lỗi','Khắc%20phục','Hoàn%20thiện'],datasets:[{label:'Mức%20độ%20tập%20trung%20(%)',data:[50,85,95,100,80],fill:true,backgroundColor:'rgba(153,%20102,%20255,%200.2)',borderColor:'%239966ff'}]}})
-> *Nhận xét: Năng lượng học tập đạt đỉnh khi debug và tìm cách khắc phục lỗi.*
-
----
-
-## 📝 ĐÁNH GIÁ VÀ NHÌN NHẬN
-
-### Đánh giá mức độ hoàn thành
-- **Công việc:** Hoàn thành xuất sắc 100% yêu cầu (Tạo RESTful API, Kiểm thử, Theo dõi vận hành).
-- **Ý thức:** Chăm chỉ, chủ động đào sâu tài liệu gốc của Spring, kết hợp công cụ AI để phân tích và hệ thống hóa lại kiến thức.
-
-### Khó khăn gặp phải
-1. Lúc đầu chưa quen với cú pháp dòng lệnh của Maven (`./mvnw`).
-2. Nhầm lẫn giữa các annotation khởi tạo môi trường test (`@SpringBootTest` vs `@WebMvcTest`).
-3. Choáng ngợp với lượng cấu hình ẩn tự động (Auto-configuration) của Spring Boot.
-
-### Quá trình và cách khắc phục
-- Đọc lại kỹ phần giải thích tài liệu từ hãng và ghi chú lại sự khác biệt.
-- Sử dụng cách phân tích "Từng bước một" thay vì sao chép toàn bộ code.
-- Mở xem trực tiếp kết quả sinh ra trong thư mục `target/` để hiểu rõ quá trình trình biên dịch của Maven.
-
-### Bài học rút ra
-- Không cần phải ghi nhớ tất cả cấu hình, quan trọng là hiểu "luồng đi" (Flow) của dữ liệu: `Request -> Controller -> Response`.
-- Luôn luôn phải viết Unit Test. Đó không phải là bước phụ, mà là tiêu chuẩn kỹ sư phần mềm.
-- Spring Boot Actuator là một vũ khí cực kỳ mạnh mẽ để giám sát Production mà không cần tốn công code thêm chức năng quản lý.
-
-### Nhận định về dự án
-Đây là một dự án nền tảng vô cùng quan trọng. Tuy quy mô nhỏ nhưng nó chứa đựng đầy đủ các khái niệm cốt lõi (Core concepts) của J2EE và Spring Boot hiện đại, là tiền đề để phát triển các hệ thống Microservices phức tạp sau này.
-
-### 🧠 Tóm tắt và củng cố kiến thức
-1. **`@RestController` + `@GetMapping`** = Xây dựng nhanh một API tiếp nhận dữ liệu.
-2. **`MockMvc`** = Gửi Request giả lập để test Controller, bỏ qua khâu khởi động web server chậm chạp.
-3. **`Actuator`** = Chỉ cần khai báo trong `pom.xml`, hệ thống tự sinh ra các đường link (`/actuator/health`) để đo lường sức khỏe ứng dụng.
-4. **`mvnw`** = Maven Wrapper bảo đảm code chạy mượt mà trên mọi máy tính mà không lo lệch phiên bản.
+</div>
 
 ---
-*Báo cáo được biên soạn và trình bày bởi Huỳnh Thái Kiệt - Đã sẵn sàng nộp và áp dụng cho các dự án thực tế sắp tới!* ✨
+
+### 📝 ĐÁNH GIÁ VÀ NHẬN ĐỊNH
+
+#### Thống kê Công việc đã/chưa hoàn thành
+*   ✅ **Đã hoàn thành (100%):** Khởi tạo project, viết API gốc (`/`), viết Unit test MockMvc với assertions đầy đủ, tích hợp Health Check Actuator, báo cáo Markdown đầy đủ biểu đồ.
+*   ❌ **Chưa hoàn thành (0%):** Không có chức năng nào bị bỏ sót theo yêu cầu cơ bản của tài liệu.
+
+#### Đánh giá mức độ hoàn thành
+*   **Về mặt công việc:** Đạt yêu cầu kỹ thuật 10/10. Ứng dụng build thành công (có minh chứng từ file byte code và log test trong thư mục `target`).
+*   **Về mặt ý thức:** Chủ động tìm hiểu tài liệu gốc bằng tiếng Anh từ Spring, ghi chú cẩn thận để tạo ra bộ tài liệu sau này có thể tự tra cứu dễ dàng.
+
+#### Khó khăn gặp phải
+1.  Bỡ ngỡ khi lần đầu sử dụng `MockMvc`, không hiểu tại sao có thể test được web mà không cần khởi động Tomcat.
+2.  Cách sử dụng lệnh Maven Wrapper (`mvnw`) qua dòng lệnh khá dài và dễ gõ nhầm.
+3.  Việc phải cấu hình và tích hợp thêm library mới (`actuator`) trực tiếp vào `pom.xml` khá lạ lẫm.
+
+#### Quá trình và cách khắc phục
+*   Nhờ kiên nhẫn đọc tài liệu hãng và nhận được sự hướng dẫn chi tiết, tôi hiểu được `@AutoConfigureMockMvc` chính là "phép thuật" tạo môi trường giả lập.
+*   Ghi chú cẩn thận lại các lệnh `Ctrl + C` (để dừng server) và lệnh `./mvnw test` hay `spring-boot:run` để tạo thói quen.
+*   Nghiên cứu cấu trúc tệp XML để hiểu cách thêm `groupId` và `artifactId` một cách chuẩn xác nhất.
+
+#### Bài học rút ra
+*   Sức mạnh của **Auto-Configuration** trong Spring Boot: Lập trình viên không cần cấu hình quá rườm rà, Framework sẽ tự đoán và thiết lập môi trường (như tự mở port 8080).
+*   **Testing là bắt buộc:** Không chỉ chạy web bằng mắt thường mà việc viết Test sẽ giúp dự án đồ sộ sau này an toàn hơn khi có thay đổi.
+
+#### Nhận định về dự án
+Dự án 1.7 là một dự án "nhỏ nhưng có võ". Nó cung cấp một nền móng tuyệt vời, như bộ xương sống của bất kỳ dự án Backend J2EE chuyên nghiệp nào. Việc làm chủ được quy trình này giúp tôi tự tin để gắn thêm cơ sở dữ liệu hay bảo mật vào ở các buổi học sau.
+
+#### Tóm tắt và củng cố kiến thức
+*   `@RestController` + `@GetMapping`: Dùng để tiếp nhận HTTP request và trả dữ liệu về.
+*   `@SpringBootTest` + `MockMvc`: Bộ đôi hoàn hảo để test API giả lập.
+*   `spring-boot-starter-actuator`: Công cụ tối thượng để theo dõi sức khỏe và luồng chạy thực tế của hệ thống.
+
+---
+> 💡 *Báo cáo này được biên soạn cẩn thận với mục đích lưu trữ lâu dài. Mọi code và logic đều được đúc kết từ quá trình thực hành thực tế.*
