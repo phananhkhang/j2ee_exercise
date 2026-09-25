@@ -16,6 +16,7 @@ public class ThreadLocalScope implements Scope {
 
         Map<String, Object> scopedObjects = threadLocal.get();
 
+        // Kiểm tra map hiện tại đã tồn tại đối tượng với tên 'name' chưa, nếu chưa thì tạo mới bằng objectFactory
         return scopedObjects.computeIfAbsent(name,
                 k -> objectFactory.getObject());
     }
@@ -25,18 +26,9 @@ public class ThreadLocalScope implements Scope {
         return threadLocal.get().remove(name);
     }
 
+    // Đăng ký cơ chế hủy đối tượng khi scope kết thúc, nhưng trong trường hợp này chúng ta không cần thực hiện gì cả
     @Override
     public void registerDestructionCallback(String name, Runnable callback) {
         // Optional destruction logic
-    }
-
-    @Override
-    public Object resolveContextualObject(String key) {
-        return null;
-    }
-
-    @Override
-    public String getConversationId() {
-        return Thread.currentThread().getName();
     }
 }

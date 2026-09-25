@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="KubernetesApiProvider">{}</component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/chapter1/part01_spring_framework/project11/pom.xml" />
         <option value="$PROJECT_DIR$/chapter1/part01_spring_framework/project17/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part02_spring_boot/project17/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part03_spring_project/project111/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part01_spring_framework/project12/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part02_spring_boot/project18/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part01_spring_framework/project13/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part01_spring_framework/project16/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part02_spring_boot/project110/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part03_spring_project/project114/pom.xml" />
+        <option value="$PROJECT_DIR$/chapter1/part03_spring_project/project113/pom.xml" />
       </list>
     </option>
   </component>

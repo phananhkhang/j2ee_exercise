@@ -19,8 +19,12 @@ public class CaptchaGenerator {
 
     public static void main(String[] args) throws IOException {
 
-        String outputDirectory =
-                "src/main/resources/static/images/captcha";
+        File outputDir = new File("src/main/resources/static/images/captcha");
+        if (!outputDir.exists()) {
+            // Khi chạy từ thư mục gốc của repository (j2ee_exercise)
+            outputDir = new File("chapter1/part02_spring_boot/project110/src/main/resources/static/images/captcha");
+        }
+        outputDir.mkdirs();
 
         for (int i = 1; i <= 20; i++) {
 
@@ -29,9 +33,7 @@ public class CaptchaGenerator {
             // Ảnh đang tồn tại trong ram
             BufferedImage image = createCaptchaImage(captchaText);
 
-            File outputFile = new File(
-                    outputDirectory + "/captcha" + i + ".png"
-            );
+            File outputFile = new File(outputDir, "captcha" + i + ".png");
 
             ImageIO.write(image, "png", outputFile);
 
@@ -71,7 +73,7 @@ public class CaptchaGenerator {
         graphics.setColor(Color.WHITE);
         graphics.fillRect(0, 0, WIDTH, HEIGHT);
 
-        // Noise lines
+        // Noise lines, tạo hiệu ứng nhiễu cho bức ảnh
         for (int i = 0; i < 10; i++) {
 
             graphics.setColor(randomColor());

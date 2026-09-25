@@ -7,15 +7,37 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="project11" />
+        <module name="project111" />
+        <module name="project12" />
+        <module name="project17" />
+        <module name="book-app" />
+      </profile>
+      <profile name="Annotation profile for project113" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="project114" />
+        <module name="project113" />
+        <module name="project13" />
+        <module name="project110" />
+        <module name="project16" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="project17" target="25" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="book-app" options="-parameters" />
       <module name="project11" options="-parameters" />
+      <module name="project110" options="-parameters" />
+      <module name="project111" options="-parameters" />
+      <module name="project113" options="-parameters" />
+      <module name="project114" options="-parameters" />
+      <module name="project12" options="-parameters" />
+      <module name="project13" options="-parameters" />
+      <module name="project16" options="-parameters" />
       <module name="project17" options="-parameters" />
     </option>
   </component>
