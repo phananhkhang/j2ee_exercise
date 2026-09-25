@@ -97,28 +97,26 @@ Sau khi banner của Spring Boot xuất hiện, màn hình terminal sẽ hiển 
 <div align="center">
 
 **1. Biểu đồ Tròn (Tỉ trọng các thành phần đã hoàn thành)**  
-<img src="https://quickchart.io/chart?c={type:'pie',data:{labels:['Khởi tạo Project','Tạo Service','Cấu hình Bean','Khởi chạy Context'],datasets:[{data:[25,25,25,25],backgroundColor:['%23ffb3ba','%23ffdfba','%23ffffba','%23baffc9']}]}}&w=400&h=250" alt="Pie Chart" width="500"/>
+<img src="https://quickchart.io/chart?w=400&h=250&c={type:%27pie%27,data:{labels:[%27Khởi%20tạo%20Project%27,%27Tạo%20Service%27,%27Cấu%20hình%20Bean%27,%27Khởi%20chạy%20Context%27],datasets:[{data:[25,25,25,25],backgroundColor:[%27%23ffb3ba%27,%27%23ffdfba%27,%27%23ffffba%27,%27%23baffc9%27]}]}}" alt="Pie Chart" width="500"/>
 
 <br><br>
 
 **2. Biểu đồ Cột (Thời gian phân bổ cho từng công việc - Phút)**  
-<img src="https://quickchart.io/chart?c={type:'bar',data:{labels:['Khởi tạo','Viết Code','Khắc phục IDE','Kiểm thử'],datasets:[{label:'Thời gian (phút)',data:[10,15,8,5],backgroundColor:'%23bae1ff',borderRadius:5}]}}&w=500&h=250" alt="Bar Chart" width="500"/>
+<img src="https://quickchart.io/chart?w=500&h=250&c={type:%27bar%27,data:{labels:[%27Khởi%20tạo%27,%27Viết%20Code%27,%27Khắc%20phục%20IDE%27,%27Kiểm%20thử%27],datasets:[{label:%27Thời%20gian%20(phút)%27,data:[10,15,8,5],backgroundColor:%27%23bae1ff%27,borderRadius:5}]}}" alt="Bar Chart" width="500"/>
 
 <br><br>
 
 **3. Biểu đồ Đường (Mức độ tự tin và tiếp thu kiến thức qua các bước)**  
-<img src="https://quickchart.io/chart?c={type:'line',data:{labels:['Bắt đầu','Bước 1','Bước 2','Bước 3','Hoàn thành'],datasets:[{label:'Mức độ tự tin (%)',data:[30,50,70,85,100],borderColor:'%23ffb3ba',backgroundColor:'%23ffb3ba',fill:false,tension:0.4,pointRadius:5}]}}&w=500&h=250" alt="Line Chart" width="500"/>
+<img src="https://quickchart.io/chart?w=500&h=250&c={type:%27line%27,data:{labels:[%27Bắt%20đầu%27,%27Bước%201%27,%27Bước%202%27,%27Bước%203%27,%27Hoàn%20thành%27],datasets:[{label:%27Mức%20độ%20tự%20tin%20(%)%27,data:[30,50,70,85,100],borderColor:%27%23ffb3ba%27,backgroundColor:%27%23ffb3ba%27,fill:false,tension:0.4,pointRadius:5}]}}" alt="Line Chart" width="500"/>
 
 <br><br>
 
 **4. Biểu đồ Miền (Area Chart - Khối lượng mã nguồn phát triển theo thời gian)**  
-<img src="https://quickchart.io/chart?c={type:'line',data:{labels:['Giai đoạn 1','Giai đoạn 2','Giai đoạn 3','Giai đoạn 4'],datasets:[{label:'Số dòng code (LoC)',data:[15,35,55,75],backgroundColor:'rgba(186,225,255,0.6)',borderColor:'%23bae1ff',fill:true,tension:0.3}]}}&w=500&h=250" alt="Area Chart" width="500"/>
+<img src="https://quickchart.io/chart?w=500&h=250&c={type:%27line%27,data:{labels:[%27Giai%20đoạn%201%27,%27Giai%20đoạn%202%27,%27Giai%20đoạn%203%27,%27Giai%20đoạn%204%27],datasets:[{label:%27Số%20dòng%20code%20(LoC)%27,data:[15,35,55,75],backgroundColor:%27rgba(186,225,255,0.6)%27,borderColor:%27%23bae1ff%27,fill:true,tension:0.3}]}}" alt="Area Chart" width="500"/>
 
 </div>
 
 </details>
-
-<br>
 
 ### 📈 Thống kê chung
 - **Số lượng công việc yêu cầu:** 4/4
