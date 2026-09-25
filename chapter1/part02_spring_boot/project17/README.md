@@ -20,7 +20,7 @@
 | **Giảng viên hướng dẫn** | ThS. Nguyễn Thanh Phước |
 | **Lớp học** | Sáng thứ 7 (5 tiết) |
 | **Học kỳ/Năm học** | Học kỳ 1 / 2026-2027 |
-| **Thời gian nộp báo cáo** | `25/09/2026` - `07:53:10` |
+| **Thời gian nộp báo cáo** | `25/09/2026` - `08:56:10` |
 
 </div>
 
@@ -123,30 +123,10 @@ xychart-beta
 ```
 
 #### 4. Biểu đồ miền (Area Chart): Biểu diễn lượng kiến thức tích lũy
-*(Sử dụng chuẩn SVG đồ họa tương thích toàn diện)*
+*(Sử dụng QuickChart đồ họa tĩnh - Tương thích toàn diện với GitHub)*
 
-<svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="background: transparent; border-radius: 8px;">
-  <!-- Grid -->
-  <line x1="50" y1="200" x2="550" y2="200" stroke="#cdb4db" stroke-width="1" stroke-dasharray="4"/>
-  <line x1="50" y1="150" x2="550" y2="150" stroke="#cdb4db" stroke-width="1" stroke-dasharray="4"/>
-  <line x1="50" y1="100" x2="550" y2="100" stroke="#cdb4db" stroke-width="1" stroke-dasharray="4"/>
-  <!-- Area Polygon (Pastel Pink) -->
-  <polygon points="50,200 150,160 250,110 350,90 450,40 550,20 550,200" fill="#ffc8dd" fill-opacity="0.6" />
-  <!-- Line on top of Area (Solid Pastel Purple) -->
-  <polyline points="50,200 150,160 250,110 350,90 450,40 550,20" fill="none" stroke="#cdb4db" stroke-width="4"/>
-  <!-- Axes -->
-  <line x1="50" y1="200" x2="550" y2="200" stroke="#8da399" stroke-width="2"/>
-  <line x1="50" y1="20" x2="50" y2="200" stroke="#8da399" stroke-width="2"/>
-  <!-- Labels -->
-  <text x="300" y="230" fill="#8da399" font-family="sans-serif" font-size="14" text-anchor="middle">Tiến trình học (Giai đoạn)</text>
-  <text x="20" y="110" fill="#8da399" font-family="sans-serif" font-size="14" transform="rotate(-90 20 110)">Kiến thức</text>
-  <!-- Data Points -->
-  <circle cx="150" cy="160" r="4" fill="#a2d2ff"/>
-  <circle cx="250" cy="110" r="4" fill="#a2d2ff"/>
-  <circle cx="350" cy="90" r="4" fill="#a2d2ff"/>
-  <circle cx="450" cy="40" r="4" fill="#a2d2ff"/>
-  <circle cx="550" cy="20" r="4" fill="#a2d2ff"/>
-</svg>
+<br>
+<img src="https://quickchart.io/chart?w=600&h=250&c=%7B%22type%22%3A%22line%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Giai%20%C4%91o%E1%BA%A1n%201%22%2C%22Giai%20%C4%91o%E1%BA%A1n%202%22%2C%22Giai%20%C4%91o%E1%BA%A1n%203%22%2C%22Giai%20%C4%91o%E1%BA%A1n%204%22%2C%22Giai%20%C4%91o%E1%BA%A1n%205%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22Ki%E1%BA%BFn%20th%E1%BB%A9c%20t%C3%ADch%20l%C5%A9y%22%2C%22data%22%3A%5B20%2C45%2C55%2C80%2C90%5D%2C%22backgroundColor%22%3A%22rgba%28255%2C200%2C221%2C0.6%29%22%2C%22borderColor%22%3A%22%23cdb4db%22%2C%22pointBackgroundColor%22%3A%22%23a2d2ff%22%2C%22pointRadius%22%3A4%2C%22fill%22%3Atrue%2C%22tension%22%3A0.3%7D%5D%7D%7D" alt="Area Chart - Kiến thức tích lũy" width="600"/>
 
 </div>
 
