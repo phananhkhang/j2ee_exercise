@@ -4,6 +4,7 @@
 </div>
 
 ---
+<div align="center">
 
 ### 📋 THÔNG TIN SINH VIÊN & HỌC PHẦN
 
@@ -17,7 +18,8 @@
 | **Học kỳ** | Học kỳ 1 |
 | **Năm học** | 2026-2027 |
 | **Ngày lập báo cáo** | 25/09/2026 |
-| **Thời gian lập** | 09:02:17 |
+| **Thời gian lập** | 09:15:17 |
+</div>
 
 ---
 
@@ -97,19 +99,25 @@ Dự án áp dụng chặt chẽ mô hình **MVC (Model - View - Controller)**. 
 
 **1. Biểu đồ tròn: Trạng thái hoàn thành công việc**
 <br>
-<img src="https://quickchart.io/chart?c={type:'pie',data:{labels:['Hoàn%20thành','Chưa%20hoàn%20thành'],datasets:[{data:[100,0],backgroundColor:['%23BAFFC9','%23FFB3BA']}]}}" width="400" alt="Pie Chart">
+<img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Ho%C3%A0n%20th%C3%A0nh%22%2C%22Ch%C6%B0a%20ho%C3%A0n%20th%C3%A0nh%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B100%2C0%5D%2C%22backgroundColor%22%3A%5B%22%23BAFFC9%22%2C%22%23FFB3BA%22%5D%7D%5D%7D%7D" width="400" alt="Pie Chart">
+
+<br><br>
 
 **2. Biểu đồ cột: Tỷ trọng phân bổ thời gian & nỗ lực**
 <br>
-<img src="https://quickchart.io/chart?c={type:'bar',data:{labels:['CSDL%20%26%20Model','Xử%20lý%20Excel','Bảo%20mật%20CAPTCHA','Giao%20diện%20Web'],datasets:[{label:'Mức%20độ%20đóng%20góp%20(%)',data:[20,40,15,25],backgroundColor:'%23BAE1FF'}]}}" width="500" alt="Bar Chart">
+<img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22bar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22CSDL%20%26%20Model%22%2C%22X%E1%BB%AD%20l%C3%BD%20Excel%22%2C%22B%E1%BA%A3o%20m%E1%BA%ADt%20CAPTCHA%22%2C%22Giao%20di%E1%BB%87n%20Web%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22M%E1%BB%A9c%20%C4%91%E1%BB%99%20%C4%91%C3%B3ng%20g%C3%B3p%20%28%25%29%22%2C%22data%22%3A%5B20%2C40%2C15%2C25%5D%2C%22backgroundColor%22%3A%22%23BAE1FF%22%7D%5D%7D%7D" width="500" alt="Bar Chart">
+
+<br><br>
 
 **3. Biểu đồ đường: Tiến độ phát triển dự án qua các giai đoạn**
 <br>
-<img src="https://quickchart.io/chart?c={type:'line',data:{labels:['Khởi%20tạo','Backend','Frontend','Gỡ%20lỗi','Hoàn%20thiện'],datasets:[{label:'Tiến%20độ%20(%)',data:[20,50,75,90,100],borderColor:'%23FFDFBA',fill:false,lineTension:0.4,pointBackgroundColor:'%23FFDFBA'}]}}" width="500" alt="Line Chart">
+<img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22line%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Kh%E1%BB%9Fi%20t%E1%BA%A1o%22%2C%22Backend%22%2C%22Frontend%22%2C%22G%E1%BB%A1%20l%E1%BB%97i%22%2C%22Ho%C3%A0n%20thi%E1%BB%87n%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22Ti%E1%BA%BFn%20%C4%91%E1%BB%99%20%28%25%29%22%2C%22data%22%3A%5B20%2C50%2C75%2C90%2C100%5D%2C%22borderColor%22%3A%22%23FFDFBA%22%2C%22fill%22%3Afalse%2C%22lineTension%22%3A0.4%2C%22pointBackgroundColor%22%3A%22%23FFDFBA%22%7D%5D%7D%7D" width="500" alt="Line Chart">
+
+<br><br>
 
 **4. Biểu đồ miền: Thống kê lỗi phát sinh & được giải quyết**
 <br>
-<img src="https://quickchart.io/chart?c={type:'line',data:{labels:['Bước%201','Bước%202','Bước%203','Bước%204','Bước%205'],datasets:[{label:'Số%20lỗi%20tồn%20đọng',data:[4,6,3,1,0],backgroundColor:'rgba(255,179,186,0.5)',borderColor:'%23FFB3BA',fill:true,lineTension:0.4}]}}" width="500" alt="Area Chart">
+<img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22line%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22B%C6%B0%E1%BB%9Bc%201%22%2C%22B%C6%B0%E1%BB%9Bc%202%22%2C%22B%C6%B0%E1%BB%9Bc%203%22%2C%22B%C6%B0%E1%BB%9Bc%204%22%2C%22B%C6%B0%E1%BB%9Bc%205%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22S%E1%BB%91%20l%E1%BB%97i%20t%E1%BB%93n%20%C4%91%E1%BB%8Dng%22%2C%22data%22%3A%5B4%2C6%2C3%2C1%2C0%5D%2C%22backgroundColor%22%3A%22rgba%28255%2C179%2C186%2C0.5%29%22%2C%22borderColor%22%3A%22%23FFB3BA%22%2C%22fill%22%3Atrue%2C%22lineTension%22%3A0.4%7D%5D%7D%7D" width="500" alt="Area Chart">
 
 </div>
 
