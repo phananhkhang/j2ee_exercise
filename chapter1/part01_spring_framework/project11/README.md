@@ -13,7 +13,7 @@
 | **Lớp học** | Sáng thứ 7 (5 tiết) |
 | **Học kỳ** | Học kỳ 1 |
 | **Năm học** | 2026 - 2027 |
-| **Thời gian báo cáo** | `25/09/2026` - `07:20:06` |
+| **Thời gian báo cáo** | `25/09/2026` - `07:49:06` |
 
 </div>
 
@@ -97,22 +97,26 @@ Sau khi banner của Spring Boot xuất hiện, màn hình terminal sẽ hiển 
 <div align="center">
 
 **1. Biểu đồ Tròn (Tỉ trọng các thành phần đã hoàn thành)**  
-<img src="https://quickchart.io/chart?w=400&h=250&c={type:%27pie%27,data:{labels:[%27Khởi%20tạo%20Project%27,%27Tạo%20Service%27,%27Cấu%20hình%20Bean%27,%27Khởi%20chạy%20Context%27],datasets:[{data:[25,25,25,25],backgroundColor:[%27%23ffb3ba%27,%27%23ffdfba%27,%27%23ffffba%27,%27%23baffc9%27]}]}}" alt="Pie Chart" width="500"/>
+<br>
+<img src="https://quickchart.io/chart?w=400&h=250&c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Kh%E1%BB%9Fi%20t%E1%BA%A1o%20Project%22%2C%22T%E1%BA%A1o%20Service%22%2C%22C%E1%BA%A5u%20h%C3%ACnh%20Bean%22%2C%22Kh%E1%BB%9Fi%20ch%E1%BA%A1y%20Context%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B25%2C25%2C25%2C25%5D%2C%22backgroundColor%22%3A%5B%22%23ffb3ba%22%2C%22%23ffdfba%22%2C%22%23ffffba%22%2C%22%23baffc9%22%5D%7D%5D%7D%7D" alt="Pie Chart" width="500"/>
 
 <br><br>
 
 **2. Biểu đồ Cột (Thời gian phân bổ cho từng công việc - Phút)**  
-<img src="https://quickchart.io/chart?w=500&h=250&c={type:%27bar%27,data:{labels:[%27Khởi%20tạo%27,%27Viết%20Code%27,%27Khắc%20phục%20IDE%27,%27Kiểm%20thử%27],datasets:[{label:%27Thời%20gian%20(phút)%27,data:[10,15,8,5],backgroundColor:%27%23bae1ff%27,borderRadius:5}]}}" alt="Bar Chart" width="500"/>
+<br>
+<img src="https://quickchart.io/chart?w=500&h=250&c=%7B%22type%22%3A%22bar%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Kh%E1%BB%9Fi%20t%E1%BA%A1o%22%2C%22Vi%E1%BA%BFt%20Code%22%2C%22Kh%E1%BA%AFc%20ph%E1%BB%A5c%20IDE%22%2C%22Ki%E1%BB%83m%20th%E1%BB%AD%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22Th%E1%BB%9Di%20gian%20%28ph%C3%BAt%29%22%2C%22data%22%3A%5B10%2C15%2C8%2C5%5D%2C%22backgroundColor%22%3A%22%23bae1ff%22%2C%22borderRadius%22%3A5%7D%5D%7D%7D" alt="Bar Chart" width="500"/>
 
 <br><br>
 
 **3. Biểu đồ Đường (Mức độ tự tin và tiếp thu kiến thức qua các bước)**  
-<img src="https://quickchart.io/chart?w=500&h=250&c={type:%27line%27,data:{labels:[%27Bắt%20đầu%27,%27Bước%201%27,%27Bước%202%27,%27Bước%203%27,%27Hoàn%20thành%27],datasets:[{label:%27Mức%20độ%20tự%20tin%20(%)%27,data:[30,50,70,85,100],borderColor:%27%23ffb3ba%27,backgroundColor:%27%23ffb3ba%27,fill:false,tension:0.4,pointRadius:5}]}}" alt="Line Chart" width="500"/>
+<br>
+<img src="https://quickchart.io/chart?w=500&h=250&c=%7B%22type%22%3A%22line%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22B%E1%BA%AFt%20%C4%91%E1%BA%A7u%22%2C%22B%C6%B0%E1%BB%9Bc%201%22%2C%22B%C6%B0%E1%BB%9Bc%202%22%2C%22B%C6%B0%E1%BB%9Bc%203%22%2C%22Ho%C3%A0n%20th%C3%A0nh%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22M%E1%BB%A9c%20%C4%91%E1%BB%99%20t%E1%BB%B1%20tin%20%28%25%29%22%2C%22data%22%3A%5B30%2C50%2C70%2C85%2C100%5D%2C%22borderColor%22%3A%22%23ffb3ba%22%2C%22backgroundColor%22%3A%22%23ffb3ba%22%2C%22fill%22%3Afalse%2C%22tension%22%3A0.4%2C%22pointRadius%22%3A5%7D%5D%7D%7D" alt="Line Chart" width="500"/>
 
 <br><br>
 
 **4. Biểu đồ Miền (Area Chart - Khối lượng mã nguồn phát triển theo thời gian)**  
-<img src="https://quickchart.io/chart?w=500&h=250&c={type:%27line%27,data:{labels:[%27Giai%20đoạn%201%27,%27Giai%20đoạn%202%27,%27Giai%20đoạn%203%27,%27Giai%20đoạn%204%27],datasets:[{label:%27Số%20dòng%20code%20(LoC)%27,data:[15,35,55,75],backgroundColor:%27rgba(186,225,255,0.6)%27,borderColor:%27%23bae1ff%27,fill:true,tension:0.3}]}}" alt="Area Chart" width="500"/>
+<br>
+<img src="https://quickchart.io/chart?w=500&h=250&c=%7B%22type%22%3A%22line%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Giai%20%C4%91o%E1%BA%A1n%201%22%2C%22Giai%20%C4%91o%E1%BA%A1n%202%22%2C%22Giai%20%C4%91o%E1%BA%A1n%203%22%2C%22Giai%20%C4%91o%E1%BA%A1n%204%22%5D%2C%22datasets%22%3A%5B%7B%22label%22%3A%22S%E1%BB%91%20d%C3%B2ng%20code%20%28LoC%29%22%2C%22data%22%3A%5B15%2C35%2C55%2C75%5D%2C%22backgroundColor%22%3A%22rgba%28186%2C225%2C255%2C0.6%29%22%2C%22borderColor%22%3A%22%23bae1ff%22%2C%22fill%22%3Atrue%2C%22tension%22%3A0.3%7D%5D%7D%7D" alt="Area Chart" width="500"/>
 
 </div>
 
