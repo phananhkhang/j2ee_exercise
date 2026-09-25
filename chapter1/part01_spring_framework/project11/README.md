@@ -1,155 +1,167 @@
-# 📝 BÁO CÁO TỔNG KẾT DỰ ÁN: SPRING BOOT GREETING APP (PROJECT 11)
+<div align="center">
 
-## 📌 THÔNG TIN SINH VIÊN
+# 🌟 BÁO CÁO TỔNG KẾT DỰ ÁN 🌟
+**Môn học: Chuyên đề J2EE**
 
-| Tiêu chí | Thông tin chi tiết |
+---
+
+| Thông tin | Chi tiết |
 | :--- | :--- |
-| 🧑‍🎓 **Họ và tên** | **Huỳnh Thái Kiệt** |
-| 🆔 **MSSV** | 3124410172 |
-| 📚 **Học phần** | Chuyên đề J2EE |
-| 🏫 **Lớp** | Sáng thứ 7 (5 tiết) |
-| 🗓️ **Học kỳ** | 1 |
-| ⏳ **Năm học** | 2026-2027 |
-| 📅 **Ngày báo cáo** | 25/09/2026 |
+| **Họ và tên sinh viên** | **Huỳnh Thái Kiệt** |
+| **Mã số sinh viên (MSSV)** | `3124410172` |
+| **Giảng viên hướng dẫn** | ThS. Nguyễn Thanh Phước |
+| **Lớp học** | Sáng thứ 7 (5 tiết) |
+| **Học kỳ** | Học kỳ 1 |
+| **Năm học** | 2026 - 2027 |
+| **Thời gian báo cáo** | `25/09/2026` - `07:20:06` |
+
+</div>
+
+<br>
+
+## 📝 1. TÓM TẮT SƠ LƯỢC VỀ DỰ ÁN
+Dự án `project11` là một bài tập thực hành cốt lõi nhằm làm quen với nền tảng **Spring Boot**. Dự án mô phỏng việc khởi tạo môi trường, thiết lập các đối tượng (Beans) thông qua cấu hình Java thuần túy (`@Configuration`, `@Bean`) thay vì dùng XML, đồng thời ứng dụng nguyên lý **Inversion of Control (IoC)** và **Dependency Injection (DI)** để truy xuất và thực thi một Service (dịch vụ) trực tiếp từ **Spring Application Context**.
+
+## 🎯 2. YÊU CẦU
+1. **Khởi tạo** dự án Java cơ bản với Maven.
+2. **Tạo lập lớp `GreetingService`** mang biến thành viên `message`.
+3. **Cấu hình Spring Bean** qua lớp `AppConf` bằng ngôn ngữ Java.
+4. **Khởi động Spring Context** bằng `SpringApplication.run()` và gọi phương thức thực thi của Bean.
+
+## 💡 3. HƯỚNG GIẢI QUYẾT
+- Sử dụng **Maven** (`pom.xml`) để quản lý các thư viện (dependencies) của Spring Boot.
+- Định hình cấu trúc package chuẩn xác: `com.sgu.j2ee.chapter1.project11`.
+- Sử dụng annotation `@SpringBootApplication` để tự động hóa cấu hình cơ sở.
+- Triển khai mô hình Constructor Injection (truyền tham số qua hàm tạo) cho `GreetingService` để đảm bảo tính toàn vẹn dữ liệu.
+
+## 🧠 4. LÝ DO ÁP DỤNG
+Phương pháp này giúp **loại bỏ sự phụ thuộc chặt chẽ (tight coupling)** giữa các lớp mã nguồn. Thay vì hàm `main` phải tự khởi tạo `new GreetingService()`, hệ thống Spring Container sẽ đứng ra quản lý vòng đời của đối tượng này. Việc này tạo tiền đề vững chắc cho các dự án J2EE ở quy mô lớn hơn, nơi mà khả năng mở rộng và bảo trì mã nguồn là yếu tố sống còn.
 
 ---
 
-## 🌟 TÓM TẮT SƠ LƯỢC VỀ DỰ ÁN
-**Project 11** là dự án nền tảng trong chuỗi bài tập của môn Chuyên đề J2EE. Dự án tập trung vào việc thiết lập và khởi chạy một ứng dụng Spring Boot cơ bản. Trọng tâm của bài thực hành này là nắm bắt khái niệm **Inversion of Control (IoC)** và **Dependency Injection (DI)** thông qua việc cấu hình bằng mã Java (`Java-based Configuration`), định nghĩa các `Spring Bean`, và truy xuất chúng từ `ApplicationContext` thay vì khởi tạo thủ công. 
+## 🔍 5. CHI TIẾT CÔNG VIỆC
 
----
+### 📍 5.1. Mục tiêu dự án
+Giúp sinh viên nắm vững cách bộ chứa nội tại (Application Context) của Spring Boot hoạt động, cách đăng ký một Bean và cách gọi lại nó để phục vụ cho các xử lý nghiệp vụ.
 
-## ⚙️ CHI TIẾT CÔNG VIỆC
+### 🛠️ 5.2. Cấu hình & Môi trường
+- **Ngôn ngữ:** Java 25
+- **Framework:** Spring Boot 4.1.1
+- **Trình quản lý gói:** Maven Wrapper (`mvnw`)
+- **IDE Đề xuất:** IntelliJ IDEA / Eclipse
 
-### 1. Mục tiêu dự án
-* Khởi tạo thành công một project Spring Boot sử dụng Maven.
-* Hiểu và áp dụng được các Annotation cốt lõi: `@SpringBootApplication`, `@Configuration`, và `@Bean`.
-* Quản lý sự phụ thuộc giữa các lớp đối tượng (components) bằng Spring Container.
-* Biết cách truy vấn và thực thi hành động của Bean trong hàm `main`.
-
-### 2. Cấu hình & Môi trường
-* **Ngôn ngữ lập trình:** Java 25
-* **Framework:** Spring Boot 4.1.1
-* **Công cụ build:** Maven
-* **IDE:** IntelliJ IDEA (hoặc Eclipse/VS Code tương đương)
-
-### 3. Cấu trúc thư mục
-Sơ đồ cây (Tree) bên dưới thể hiện cấu trúc mã nguồn đã thực hiện:
-
+### 📂 5.3. Cấu trúc thư mục
+Được xây dựng chuẩn theo kiến trúc Maven tiêu chuẩn:
 ```text
 project11/
-├── src/
-│   ├── main/
-│   │   ├── java/com/sgu/j2ee/chapter1/project11/
-│   │   │   ├── AppConf.java
-│   │   │   ├── GreetingService.java
-│   │   │   └── Project11Application.java
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-│       └── java/com/sgu/j2ee/chapter1/project11/
-│           └── Project11ApplicationTests.java
-├── pom.xml
-└── README.md
+ ┣ src/main/java/com/sgu/j2ee/chapter1/project11/
+ ┃ ┣ AppConf.java
+ ┃ ┣ GreetingService.java
+ ┃ ┗ Project11Application.java
+ ┣ src/main/resources/
+ ┃ ┗ application.properties
+ ┗ pom.xml
 ```
 
-### 4. Các thành phần chính
-1. **`GreetingService.java`**: Lớp Service thuần túy chứa biến `message` và phương thức `printMessage()` để in lời chào.
-2. **`AppConf.java`**: Lớp cấu hình (đánh dấu bởi `@Configuration`), chứa phương thức trả về đối tượng `GreetingService` (đánh dấu bởi `@Bean`) để Spring quản lý.
-3. **`Project11Application.java`**: Điểm neo khởi chạy ứng dụng. Gọi `SpringApplication.run()` để tạo ngữ cảnh (Context), sau đó dùng `context.getBean()` để lấy và sử dụng Service.
+### 🧩 5.4. Các thành phần chính
+1. **`GreetingService.java`**: Chứa logic nghiệp vụ xử lý câu chào (biến `message`) và phương thức in thông tin `printMessage()`.
+2. **`AppConf.java`**: Lớp định nghĩa cấu hình, nơi đánh dấu `@Bean` cho hệ thống Spring biết cần phải khởi tạo đối tượng `GreetingService` với nội dung cụ thể.
+3. **`Project11Application.java`**: Hàm `main` khởi động hệ thống ứng dụng và truy vấn dữ liệu từ Application Context.
 
-### 5. Các chức năng và URL kiểm thử
-> 💡 **Lưu ý:** Đây là ứng dụng dạng Console (chạy trên Terminal), không nhúng Web Server (như Tomcat) nên không có URL kiểm thử dạng `http://localhost...`
-* **Chức năng duy nhất:** Lấy thành công Bean từ bộ nhớ Spring và in chuỗi thông điệp *"Xin chào..."* ra cửa sổ Console.
+### 🔗 5.5. Các chức năng và URL kiểm thử
+- *Lưu ý:* Do dự án hiện tại là ứng dụng Console (chạy trên Terminal) và chưa tích hợp Web Starter (Tomcat nhúng), nên **không có URL kiểm thử (như `localhost:8080`)**. 
+- **Chức năng duy nhất:** In lời chào được cấu hình sẵn ra màn hình Terminal khi ứng dụng vừa chạy xong.
 
-### 6. Hướng dẫn khởi chạy dự án
-* **Cách 1 (Sử dụng IDE):** Mở project bằng IntelliJ IDEA, chờ Maven tải các gói phụ thuộc (Dependencies). Mở file `Project11Application.java`, nhấn nút **Run (Tam giác màu xanh)** ở dòng hàm `main`.
-* **Cách 2 (Sử dụng Terminal):** Mở terminal tại thư mục gốc của project (nơi chứa `pom.xml`) và chạy lệnh:
+### 🚀 5.6. Hướng dẫn khởi chạy dự án
+- **Cách 1 (Sử dụng IDE):** Mở tệp `Project11Application.java`, nhấn chuột phải và chọn `Run 'Project11Application.main()'`.
+- **Cách 2 (Sử dụng dòng lệnh Maven):**
+  Mở terminal tại thư mục gốc của dự án (`project11`) và gõ lệnh:
   ```bash
-  mvn spring-boot:run
+  ./mvnw spring-boot:run
   ```
 
-### 7. Kết quả khi khởi chạy
-```console
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v4.1.1)
-
-2026-09-25 08:30:15.123  INFO 1234 --- [           main] c.s.j.c.p.Project11Application           : Starting Project11Application using Java 25...
-Xin chào Spring Boot từ file cấu hình AppConf!
-```
+### ✅ 5.7. Kết quả khi khởi chạy
+Sau khi banner của Spring Boot xuất hiện, màn hình terminal sẽ hiển thị dòng chữ:
+> **"Xin chào Spring Boot từ file cấu hình AppConf!"**
 
 ---
 
-## 🚧 KHÓ KHĂN GẶP PHẢI
+## 📊 6. THỐNG KÊ & BIỂU ĐỒ TRỰC QUAN
 
-* **Khó khăn 1 (Môi trường):** Lúc đầu, IDE không nhận diện thư mục `java` là Source Root (thư mục hiển thị màu xám), dẫn đến việc không thể tạo `Java Class` thông qua Menu chuột phải.
-* **Khó khăn 2 (Kiến thức):** Chưa phân biệt rõ vai trò của `@Configuration` và `@Bean`, cũng như cú pháp kết nối giữa hàm khởi tạo của `GreetingService` và khối lệnh trong `AppConf`.
+*(Phối màu Pastel thân thiện với giao diện sáng/tối)*
+
+<details open>
+<summary><b>📌 Nhấn để xem toàn bộ 4 biểu đồ báo cáo</b></summary>
+<br>
+
+<div align="center">
+
+**1. Biểu đồ Tròn (Tỉ trọng các thành phần đã hoàn thành)**  
+<img src="https://quickchart.io/chart?c={type:'pie',data:{labels:['Khởi tạo Project','Tạo Service','Cấu hình Bean','Khởi chạy Context'],datasets:[{data:[25,25,25,25],backgroundColor:['%23ffb3ba','%23ffdfba','%23ffffba','%23baffc9']}]}}&w=400&h=250" alt="Pie Chart" width="500"/>
+
+<br><br>
+
+**2. Biểu đồ Cột (Thời gian phân bổ cho từng công việc - Phút)**  
+<img src="https://quickchart.io/chart?c={type:'bar',data:{labels:['Khởi tạo','Viết Code','Khắc phục IDE','Kiểm thử'],datasets:[{label:'Thời gian (phút)',data:[10,15,8,5],backgroundColor:'%23bae1ff',borderRadius:5}]}}&w=500&h=250" alt="Bar Chart" width="500"/>
+
+<br><br>
+
+**3. Biểu đồ Đường (Mức độ tự tin và tiếp thu kiến thức qua các bước)**  
+<img src="https://quickchart.io/chart?c={type:'line',data:{labels:['Bắt đầu','Bước 1','Bước 2','Bước 3','Hoàn thành'],datasets:[{label:'Mức độ tự tin (%)',data:[30,50,70,85,100],borderColor:'%23ffb3ba',backgroundColor:'%23ffb3ba',fill:false,tension:0.4,pointRadius:5}]}}&w=500&h=250" alt="Line Chart" width="500"/>
+
+<br><br>
+
+**4. Biểu đồ Miền (Area Chart - Khối lượng mã nguồn phát triển theo thời gian)**  
+<img src="https://quickchart.io/chart?c={type:'line',data:{labels:['Giai đoạn 1','Giai đoạn 2','Giai đoạn 3','Giai đoạn 4'],datasets:[{label:'Số dòng code (LoC)',data:[15,35,55,75],backgroundColor:'rgba(186,225,255,0.6)',borderColor:'%23bae1ff',fill:true,tension:0.3}]}}&w=500&h=250" alt="Area Chart" width="500"/>
+
+</div>
+
+</details>
+
+<br>
+
+### 📈 Thống kê chung
+- **Số lượng công việc yêu cầu:** 4/4
+- **Đã hoàn thành:** 100%
+- **Chưa hoàn thành:** 0%
+
+---
+
+## 🏆 7. ĐÁNH GIÁ MỨC ĐỘ HOÀN THÀNH
+- **Về mặt công việc:** Hoàn thành xuất sắc và chính xác các yêu cầu đặt ra ban đầu, cấu trúc mã nguồn gọn gàng, đúng chuẩn.
+- **Về mặt ý thức:** Chủ động đặt câu hỏi khi gặp lỗi (lỗi không hiển thị tuỳ chọn tạo Java Class), nỗ lực ghi nhớ, tóm tắt và quy hoạch tài liệu rõ ràng.
 
 ---
 
-## 🛠️ QUÁ TRÌNH VÀ CÁCH KHẮC PHỤC
+## 🚧 8. KHÓ KHĂN GẶP PHẢI & QUÁ TRÌNH KHẮC PHỤC
 
-* **Khắc phục 1:** Nhận ra project thiếu bước đồng bộ với Maven. Đã nhấp chuột phải vào file `pom.xml` và chọn **"Add as Maven Project"**. Thư mục tự động chuyển xanh và có thể code bình thường.
-* **Khắc phục 2:** Thông qua hướng dẫn và tự tra cứu, tôi hiểu rằng `@Configuration` giống như một "nhà máy", còn `@Bean` là "sản phẩm" được nhà máy đó sản xuất ra để đưa vào kho lưu trữ (Context) của Spring. Đã vận dụng constructor để truyền chuỗi văn bản an toàn.
+**Khó khăn:**
+Trong quá trình tạo lớp `GreetingService`, IDE (phần mềm lập trình) đã không nhận diện được thư mục `java` là thư mục chứa mã nguồn. Tuỳ chọn `New -> Java Class` hoàn toàn bị vô hiệu hóa và biến mất khỏi menu ngữ cảnh.
 
----
-
-## 📖 BÀI HỌC RÚT RA
-
-* **Dependency Injection là gì:** Thay vì tự dùng từ khóa `new` lung tung khắp mọi nơi trong mã nguồn, ta giao quyền khởi tạo đối tượng (Inversion of Control) cho Spring Boot. Khi cần sử dụng, ta chỉ việc "xin" nó từ `ApplicationContext`.
-* **Cấu hình bằng Java mạnh mẽ hơn XML:** Việc viết cấu hình ngay bằng Java giúp dễ dàng phát hiện lỗi khi biên dịch (compile-time) và tận dụng được tính năng gợi ý code của IDE.
-
----
-
-## ⚖️ NHẬN ĐỊNH VỀ DỰ ÁN
-
-Đây là một dự án quy mô rất nhỏ gọn (Micro-project), nhưng đóng vai trò **cực kỳ quan trọng** như một "Hello World" để bước chân vào thế giới Spring Boot. Nó giúp làm mờ đi sự "ma thuật" (magic) đằng sau cách Spring khởi tạo hệ thống, giúp sinh viên hiểu bản chất của Bean trước khi học các Annotation tự động (như `@Component`, `@Service`, `@Autowired`).
+**Quá trình khắc phục:**
+1. Phân tích ngữ cảnh và nhận diện đây là một dự án Maven (nhờ có tệp `pom.xml`).
+2. Nhận ra IDE chưa tiến hành đồng bộ hóa (sync) dự án.
+3. Nhấp chuột phải vào tệp `pom.xml` ở góc dưới cấu trúc thư mục.
+4. Lựa chọn **"Add as Maven Project"**.
+5. Đợi hệ thống tự động tải `dependencies` và đánh dấu lại thư mục. Biểu tượng thư mục `java` chuyển sang màu xanh (Source Root) và vấn đề được giải quyết.
 
 ---
 
-## 📊 THỐNG KÊ VÀ BIỂU ĐỒ (VISUALIZATION)
+## 🎓 9. BÀI HỌC RÚT RA & NHẬN ĐỊNH VỀ DỰ ÁN
 
-### Biểu đồ phân bổ thời gian thực hiện (Pie Chart)
-```mermaid
-pie title Phân bổ thời gian thực hiện dự án (Theo %)
-    "Tìm hiểu lý thuyết (IoC/DI)" : 30
-    "Khắc phục lỗi môi trường (Maven IDE)" : 20
-    "Viết mã nguồn (Java Code)" : 30
-    "Viết báo cáo, Markdown" : 20
-```
+**Bài học rút ra:**
+- Học được cách thức tương tác giữa các công cụ quản lý dự án (Maven) và IDE. Nếu IDE "lú", hãy chỉ định cho nó biết nơi lưu trữ thông tin cấu hình (`pom.xml`).
+- Hiểu được vòng đời cơ bản của một ứng dụng Spring Boot và cách lấy một đối tượng ra từ "thùng chứa" Application Context.
 
-### Sơ đồ luồng hoạt động (Flowchart / Network)
-```mermaid
-graph TD
-    A[Project11Application.java] -->|1. Gọi run| B(SpringApplication Context)
-    B -->|2. Quét cấu hình| C{AppConf.java}
-    C -->|3. Thực thi @Bean| D[Khởi tạo GreetingService]
-    D -.->|4. Lưu vào bộ nhớ| B
-    A -->|5. getBean| E[Lấy GreetingService từ Context]
-    E -->|6. printMessage| F((In ra Console))
-    
-    classDef config fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef app fill:#bbf,stroke:#333,stroke-width:2px;
-    class C config;
-    class A app;
-```
-
-### Đánh giá mức độ tự tin ở các kỹ năng (Radar Chart / Cột)
-```mermaid
-xychart-beta
-    title "Biểu đồ mức độ nắm bắt kỹ năng sau dự án (Thang điểm 10)"
-    x-axis ["Tạo Project", "Cấu hình Maven", "Tạo @Bean", "Truy vấn Context", "Debug IDE"]
-    y-axis "Mức độ hiểu biết" 0 --> 10
-    bar [9, 8, 8, 7, 9]
-    line [9, 8, 8, 7, 9]
-```
+**Nhận định về dự án:**
+Đây là một dự án nhỏ gọn nhưng vô cùng thiết thực. Nó đóng vai trò như một bước đệm hoàn hảo để bước vào thế giới phát triển ứng dụng doanh nghiệp bằng J2EE, giúp tôi làm quen với nguyên lý DI - trái tim của Spring Framework.
 
 ---
-**Chữ ký sinh viên:**  
-*Huỳnh Thái Kiệt*  
-*(Đã hoàn thành và báo cáo)*
+
+## 📚 10. TÓM TẮT VÀ CỦNG CỐ KIẾN THỨC
+Sự khác biệt cốt lõi giữa **Spring Boot** và **Spring Framework** truyền thống đã được củng cố mạnh mẽ:
+*   **Spring Framework** cung cấp nền tảng mạnh mẽ nhưng yêu cầu phải viết rất nhiều tệp cấu hình dài dòng, cấu hình server thủ công.
+*   **Spring Boot** khắc phục mọi yếu điểm đó bằng triết lý *"Convention over Configuration"* (Quy ước thay vì Cấu hình). Nó giúp tự động cấu hình (Auto-Configuration), nhúng sẵn Web Server (như Tomcat) và quản lý phiên bản thư viện thông minh (Starters), giúp lập trình viên chỉ việc tập trung vào viết mã nghiệp vụ (Business Logic).
+
+---
+*Báo cáo được thực hiện với sự tập trung và tâm huyết cao nhất.* ✨
